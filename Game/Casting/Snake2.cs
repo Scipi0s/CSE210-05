@@ -24,7 +24,7 @@ namespace Unit05.Game.Casting
         /// Gets the snake's body segments.
         /// </summary>
         /// <returns>The body segments in a List.</returns>
-        public List<Actor> GetBody()
+        public List<Actor> GetBody2()
         {
             return new List<Actor>(segments2.Skip(1).ToArray());
         }
@@ -33,7 +33,7 @@ namespace Unit05.Game.Casting
         /// Gets the snake's head segment.
         /// </summary>
         /// <returns>The head segment as an instance of Actor.</returns>
-        public Actor GetHead()
+        public Actor GetHead2()
         {
             return segments2[0];
         }
@@ -42,7 +42,7 @@ namespace Unit05.Game.Casting
         /// Gets the snake's segments (including the head).
         /// </summary>
         /// <returns>A list of snake segments as instances of Actors.</returns>
-        public List<Actor> GetSegments()
+        public List<Actor> GetSegments2()
         {
             return segments2;
         }
@@ -51,7 +51,7 @@ namespace Unit05.Game.Casting
         /// Grows the snake's tail by the given number of segments.
         /// </summary>
         /// <param name="numberOfSegments">The number of segments to grow.</param>
-        public void GrowTail(int numberOfSegments)
+        public void GrowTail2(int numberOfSegments)
         {
             for (int i = 0; i < numberOfSegments; i++)
             {
@@ -70,7 +70,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <inheritdoc/>
-        public override void MoveNext()
+        public override void MoveNext2()
         {
             foreach (Actor segment in segments2)
             {
@@ -90,7 +90,7 @@ namespace Unit05.Game.Casting
         /// Turns the head of the snake in the given direction.
         /// </summary>
         /// <param name="velocity">The given direction.</param>
-        public void TurnHead(Point direction)
+        public void TurnHead2(Point direction)
         {
             segments2[0].SetVelocity(direction);
         }
@@ -98,7 +98,7 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody2()
         {
             int x = Constants.MAX_X / 2;
             int y = Constants.MAX_Y / 2;
