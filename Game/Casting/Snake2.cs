@@ -70,7 +70,7 @@ namespace Unit05.Game.Casting
         }
 
         /// <inheritdoc/>
-        public override void MoveNext2()
+        public override void MoveNext()
         {
             foreach (Actor segment in segments2)
             {
@@ -100,7 +100,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         private void PrepareBody2()
         {
-            int x = Constants.MAX_X / 2;
+            int x = Constants.MAX_X * 3 / 4;
             int y = Constants.MAX_Y / 2;
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
