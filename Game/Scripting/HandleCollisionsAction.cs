@@ -43,6 +43,7 @@ namespace Unit05.Game.Scripting
         private void HandleFoodCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
             Score score = (Score)cast.GetFirstActor("score");
             // Food food = (Food)cast.GetFirstActor("food");
             
@@ -62,12 +63,23 @@ namespace Unit05.Game.Scripting
         private void HandleSegmentCollisions(Cast cast)
         {
             Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
             Actor head = snake.GetHead();
             List<Actor> body = snake.GetBody();
+            Actor head2 = snake2.GetHead2();
+            List<Actor> body2 = snake2.GetBody2();
+
 
             foreach (Actor segment in body)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
+             foreach (Actor segment2 in body2)
+            {
+                if (segment2.GetPosition().Equals(head2.GetPosition()))
                 {
                     isGameOver = true;
                 }
@@ -79,7 +91,10 @@ namespace Unit05.Game.Scripting
             if (isGameOver == true)
             {
                 Snake snake = (Snake)cast.GetFirstActor("snake");
+                Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
                 List<Actor> segments = snake.GetSegments();
+                List<Actor> segments2 = snake2.GetSegments2();
+                List<Actor> body2 = snake2.GetBody2();
                 // Food food = (Food)cast.GetFirstActor("food");
 
                 // create a "game over" message
@@ -96,6 +111,10 @@ namespace Unit05.Game.Scripting
                 foreach (Actor segment in segments)
                 {
                     segment.SetColor(Constants.WHITE);
+                }
+                foreach (Actor segment2 in segments2)
+                {
+                    segment2.SetColor(Constants.WHITE);
                 }
                 // food.SetColor(Constants.WHITE);
             }
