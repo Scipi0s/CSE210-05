@@ -17,7 +17,7 @@ namespace Unit05.Game.Casting
         /// </summary>
         public Snake2()
         {
-            PrepareBody();
+            PrepareBody2();
         }
 
         /// <summary>
