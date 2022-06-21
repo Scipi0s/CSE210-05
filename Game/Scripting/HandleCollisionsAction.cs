@@ -33,8 +33,19 @@ namespace Unit05.Game.Scripting
                 HandleFoodCollisions(cast);
                 HandleSegmentCollisions(cast);
                 HandleGameOver(cast);
+                MakeBothDudesLonger(cast);
             }
         }
+
+
+        public void MakeBothDudesLonger(Cast cast)
+        {
+            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake2 snake2 = (Snake2)cast.GetFirstActor("snake2");
+            snake.GrowTail(1);
+            snake2.GrowTail2(1);
+        }
+
 
         /// <summary>
         /// Updates the score nd moves the food if the snake collides with it.

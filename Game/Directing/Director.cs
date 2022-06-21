@@ -54,6 +54,13 @@ namespace Unit05.Game.Directing
             foreach(Action action in actions)
             {
                 action.Execute(cast, script);
+
+                //the following lines have been commented out because they don't work
+                //Snake snake = new Snake();
+                //Snake2 snake2 = new Snake2();
+
+                //snake.GrowTail(1);
+                //snake2.GrowTail2(1);
             }
         }
     }
