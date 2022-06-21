@@ -53,10 +53,6 @@ namespace Unit05.Game.Scripting
             Snake snake = (Snake)cast.GetFirstActor("snake");
             snake.TurnHead(direction);
 
-        }
-
-        public void Execute2(Cast cast, Script script)
-        {
             // left
             if (keyboardService.IsKeyDown("j"))
             {
