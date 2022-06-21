@@ -80,20 +80,36 @@ namespace Unit05.Game.Scripting
             Actor head2 = snake2.GetHead2();
             List<Actor> body2 = snake2.GetBody2();
 
-
+            //checks to see if player 1s body touches their own head
             foreach (Actor segment in body)
             {
                 if (segment.GetPosition().Equals(head.GetPosition()))
                 {
                     isGameOver = true;
                 }
+                //checks to see if player 1s body is touching player 2s head
+                if (segment.GetPosition().Equals(head2.GetPosition()))
+                {
+                    isGameOver = true;
+                }
             }
+            //checks to see if player 2s body touches their own head
              foreach (Actor segment2 in body2)
             {
                 if (segment2.GetPosition().Equals(head2.GetPosition()))
                 {
                     isGameOver = true;
                 }
+                //checks to see if player 2s body is touching player 1s head
+                if (segment2.GetPosition().Equals(head.GetPosition()))
+                {
+                    isGameOver = true;
+                }
+            }
+            //checks to see if player 1 and 2s heads are touching (rare occurance (unless game is started and no inputs are done))
+            if (head.GetPosition().Equals(head2.GetPosition()))
+            {
+                isGameOver = true;
             }
         }
 
